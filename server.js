@@ -1,3 +1,4 @@
+require('dotenv').config();  // this allows our server to read from the env.
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
@@ -6,17 +7,16 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
-const indexRoutes = require('./routes/index');
-// load the env consts
-require('dotenv').config();
+
+// connect to the MongoDB with mongoose
+require('./config/database');   
+require('./config/passport');  // configure Passport
+const indexRouter = require('./routes/index');
+const locationsRouter= require('./routes/locations');
+
 
 // create the Express app
 const app = express();
-
-// connect to the MongoDB with mongoose
-require('./config/database');
-// configure Passport
-require('./config/passport');
 
 
 
@@ -24,32 +24,36 @@ require('./config/passport');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(methodOverride('_method'));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
-// mount the session middleware
+// setting up our session cookie
+// is going to be sent back and forth on every http request response
+// inside it were going to end storing logged in users database id
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true
 }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.initialize());   //set up passport after session
+app.use(passport.session());   // gives us req.user
+app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 
-// Add this middleware BELOW passport middleware
+
+
+// Add this middleware BELOW passport middleware and BEFORE your controller
 app.use(function (req, res, next) {
   res.locals.user = req.user; // assinging a property to res.locals, makes that said property (user) availiable in every
-  // single ejs view
-  next();
+  next();                     // single ejs view
 });
 
 // mount all routes with appropriate base paths
-app.use('/', indexRoutes);
+app.use('/', indexRouter); // Localhost:3000
+app.use('/locations', locationsRouter); // every route in the locationsRoute is starting with /locations
 
 
 // invalid request, send 404 page

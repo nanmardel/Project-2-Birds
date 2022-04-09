@@ -7,6 +7,31 @@
     <title>Locations List</title>
 </head>
 <body>
-    
+    <div class="topnav">
+        <a class="active" href="/locations">All Locations</a>
+        <a href="/locations/new">Add Location</a>
+      </div>
+    <table id="list">
+        <thead>
+            <tr>
+                <th>Name of Location</th>
+                <th> State</th>
+                <th>City</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <% locations.forEach(function(l){ %>
+                        <tr>
+                            <td><%= l.name %></td>
+                            <td><%= l.state %></td>
+                            <td><%= l.city %></td>
+
+                            <td><a href="/locations/<%=l._id %>">Details</a></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </tr>
+        </thead>
+    </table>
 </body>
 </html>

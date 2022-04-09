@@ -5,9 +5,11 @@ const isLoggedIn = require('../config/auth') //add to new route
 
 router.get('/', locationsCtrl.index);
 
-// router.post('/', locationsCtrl.create);  // export create and make funtion
+router.get('/new', isLoggedIn, locationsCtrl.new);
 
+router.post('/', locationsCtrl.create);  
 
+router.get('/:id', locationsCtrl.show);
 
 
 

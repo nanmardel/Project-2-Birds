@@ -8,6 +8,10 @@ const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
 
+console.log(process.env.GOOGLE_CLIENT_ID);
+console.log(process.env.GOOGLE_SECRET);
+console.log(process.env.GOOGLE_CALLBACK);
+
 // connect to the MongoDB with mongoose
 require('./config/database');   
 require('./config/passport');  // configure Passport

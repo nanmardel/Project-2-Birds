@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Location</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>new.ejs</title>
 </head>
 <body>
     <div class="topnav">
   <a class="active" href="/locations">All Locations</a>
   <a href="/locations/new">Add Location</a>
 </div>
-<h2>New Location</h2>
+<h2> Add New Location</h2>
     <form id="new-form" action="/locations" method="POST">
-        <label>State:</label>
-        <input type="text" name="state">
-        <label>city:</label>
-        <input type="text" name="city">
         <label>Location Name:</label>
-        <input type="text" name="name">
+            <input type="text" name="name">
+            <br>
+            <label>City:</label>
+            <input type="text" name="city">
+            <br>
+            <label>State:</label>
+            <input type="text" name="state">
+        <br>
         <input type="submit" value="Add Location">
     </form>
     

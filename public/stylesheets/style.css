@@ -18,12 +18,53 @@
 .collection-item form {
   margin-top: -5px;
 }
-.show-page {
-  background-color: #168503;
+
+.topnav a {
+  display: grid;
+  justify-content: end;
+  color: #FAEF7E;
+  text-size-adjust: 30px;
+
+}
+body {
+  background-image: url('https://i.imgur.com/mNVBQOc.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-h1 {
-  font-family: 'Poiret One', cursive;
-  font-family: 'Shadows Into Light', cursive;
 
+h1 {
+  font-family: 'Lemonada', cursive, Arial;
+  color: rgb(0, 148, 200);
+  text-align: center;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+h3 {
+  text-align: center;
+  color: rgb(0, 148, 200);
+}
+
+#list {
+  text-align: center;
+  color: rgb(222, 83, 27);
+  display: grid;
+  justify-items: center;
+  justify-content: space-around;
+  border-spacing: 15px;
+}
+
+a {
+  color: white;
+}
+
+h2 {
+  color: rgb(0, 148, 200);
+
+}
+
+#new-form {
+  color:rgb(0, 148, 200);
+  
 }

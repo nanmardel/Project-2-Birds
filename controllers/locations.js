@@ -30,7 +30,7 @@ function create(req, res) {
         console.log(err, 'create error');
         if(err) return res.redirect('/locations/new');
         console.log(location);
-        res.redirect('/locations/new')
+        res.redirect('/locations')
 });
 }
 

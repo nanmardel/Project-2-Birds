@@ -14,4 +14,20 @@ const locationSchema = new Schema({
     }
 });
 
+const imageSchema = new Schema({
+    image: {
+        type: String,
+    },
+    description: {
+        type: String,
+    },
+    user: {type: Schema.Types.ObjectId, ref: 'User'}, // refererncing the user document
+    userName: String, 
+    userAvatar: String
+}, {
+    timestamps: true
+});
+
+
+
 module.exports = mongoose.model('Location',locationSchema);

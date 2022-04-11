@@ -1,24 +1,3 @@
-.brand-logo {
-  margin-left: 15px;
-}
-
-.card .card-content .card-title {
-  margin-bottom: 10px;
-}
-
-#search-row form {
-  padding-top: 20px;
-}
-
-.student-name {
-  position: relative;
-  top: -5px;
-}
-
-.collection-item form {
-  margin-top: -5px;
-}
-
 .topnav a {
   display: grid;
   justify-content: end;
@@ -30,6 +9,7 @@ body {
   background-image: url('https://i.imgur.com/mNVBQOc.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
 }
 
 
@@ -55,6 +35,10 @@ h3 {
   border-spacing: 15px;
 }
 
+#list-of-location {
+  display: grid;
+}
+
 a {
   color: white;
 }
@@ -68,3 +52,40 @@ h2 {
   color:rgb(0, 148, 200);
   
 }
+
+#add-bird-image {
+  color: rgb(0, 148, 200);
+}
+
+#show-page {
+  text-align: center;
+  color: rgb(222, 83, 27);
+  display: grid;
+  justify-items: normal;
+  justify-content: start;
+  border-spacing: 15px;
+}
+
+
+
+
+/* .brand-logo {
+  margin-left: 15px;
+}
+
+.card .card-content .card-title {
+  margin-bottom: 10px;
+}
+
+#search-row form {
+  padding-top: 20px;
+}
+
+.student-name {
+  position: relative;
+  top: -5px;
+}
+
+.collection-item form {
+  margin-top: -5px;
+} */

@@ -11,17 +11,24 @@
 <body>
     
     <div class="topnav">
-        <a href="/locations/new">Add Location</a>
-      </div>
+            <% if (user) { %>
+                <a href="/locations/new"<%- title === 'Add Location' ? 'class="active"' : '' %>>
+                    Add Location</a>
+                <a href="/logout">Log Out</a>
+            <% } else { %>
+                <a href="/auth/google" class="login">Log In</a>
+            <% } %>
+          </div>
         
       <h1>Plumage</h1>
       <h3>List of Locations</h3>
+     
     <table id="list">
         <tr>
-            <th>Name of Location</th>
+            <th>Location</th>
                 <th> State</th>
                 <th>City</th>
-                </tr>
+            </tr>
                 <tbody>
                     <% locations.forEach(function(l){ %>
                         <tr>
@@ -36,5 +43,6 @@
             </tr>
         </thead>
     </table>
+</section>
 </body>
 </html>

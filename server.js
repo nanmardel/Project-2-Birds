@@ -16,8 +16,8 @@ console.log(process.env.GOOGLE_CALLBACK);
 require('./config/database');   
 require('./config/passport');  // configure Passport
 const indexRouter = require('./routes/index');
-const locationsRouter= require('./routes/locations');
-
+const locationsRouter = require('./routes/locations');
+const imagesRouter = require('./routes/locations');
 
 // create the Express app
 const app = express();
@@ -58,7 +58,7 @@ app.use(function (req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/', indexRouter); // Localhost:3000
 app.use('/locations', locationsRouter); // every route in the locationsRoute is starting with /locations
-
+app.use('/', imagesRouter);
 
 // invalid request, send 404 page
 app.use(function(req, res) {

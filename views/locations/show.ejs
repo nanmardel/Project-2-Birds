@@ -12,6 +12,7 @@
     <div class="topnav">
   <a class="active" href="/locations">All Locations</a>
   <a href="/locations/new">Add Location</a>
+  <a href="/logout">Log Out</a>
 </div>
 <h1>Plumage</h1>
 <section id="show-page">
@@ -33,5 +34,13 @@
    </tbody>
    </table>
 </section>
+
+<h2>Bird Images</h2>
+<form id="add-bird-image" method="POST" action="/locations/<%=location._id %>/images">
+    <label>Description:</label> <br>
+    <textarea name="description"></textarea><br>
+    <input type="submit" value="Add Image">
+
+</form>
 </body>
 </html>

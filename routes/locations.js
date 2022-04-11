@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const locationsCtrl = require('../controllers/locations');
-const isLoggedIn = require('../config/auth') //add to new route
+const isLoggedIn = require('../config/auth') //add to routes that are only for users that are loggedIn
 
 router.get('/', locationsCtrl.index);
 
 router.get('/new', isLoggedIn, locationsCtrl.new);
 
-router.post('/', locationsCtrl.create);  
+router.post('/', isLoggedIn, locationsCtrl.create);  
 
-router.get('/:id', locationsCtrl.show);
+router.get('/:id', isLoggedIn, locationsCtrl.show);
 
 
 

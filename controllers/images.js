@@ -1,6 +1,6 @@
 // image mmodel that can talk to the database
 
-const Location = require('../models/image');
+const Location = require('../models/location');
 
 module.exports = { 
     addImage,
@@ -11,7 +11,7 @@ function addImage(req,res) {
         locationdb.images.push(req.body);  // content of the form (the image we want to upload to the location)
         locationdb.save(function(err) {
             console.log(locationdb)
-            res.redirect(`/movies/${locationdb._id}`);
+            res.redirect(`/locations/${locationdb._id}`);
         });
     });
 }

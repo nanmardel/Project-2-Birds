@@ -1,21 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const locationSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    city: {
-        type: String,
-    },
-    state: {
-        type: String
-    }
-});
-
 const imageSchema = new Schema({
-    image: {
+    imageUrl: {
         type: String,
     },
     description: {
@@ -27,6 +14,23 @@ const imageSchema = new Schema({
 }, {
     timestamps: true
 });
+
+const locationSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    city: {
+        type: String,
+    },
+    state: {
+        type: String
+    }, 
+    images:[imageSchema]
+    
+});
+
+
 
 
 

@@ -7,9 +7,10 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
-const bodyParser = require('body-parser');
-const router = require('./routes');
-const port = process.env.PORT
+
+
+
+
 
 
 console.log(process.env.GOOGLE_CLIENT_ID);
@@ -21,22 +22,19 @@ require('./config/database');
 require('./config/passport');  // configure Passport
 const indexRouter = require('./routes/index');
 const locationsRouter = require('./routes/locations');
-const imagesRouter = require('./routes/locations');
+const imagesRouter = require('./routes/images');
+
 
 // create the Express app
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use('/upload', router);
-app.listen(port, function() {
-console.log('server is running on Port', port);
-});
+
+
 
 // setting up our session cookie
 // is going to be sent back and forth on every http request response

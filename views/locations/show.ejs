@@ -37,10 +37,22 @@
 
 <h2>Bird Images</h2>
 <form id="add-bird-image" method="POST" action="/locations/<%=location._id %>/images">
+    <label>Bird Image:</label>
+    <input type="url" id="bird-image" name="imageUrl"><br>
     <label>Description:</label> <br>
     <textarea name="description"></textarea><br>
     <input type="submit" value="Add Image">
 
 </form>
+<section id="bird-images-listing">
+    <% location.images.forEach(bird => { %>
+        <div class="bird-image-container">
+            <img class="bird-image" src="<%= bird.imageUrl %>">
+            <h3 class="bird-author"><%= bird.userName %></h3>
+            <p class="description"><%= bird.description %></p>
+        </div>
+    <% }) %>
+    
+</section>
 </body>
 </html>

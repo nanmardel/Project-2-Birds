@@ -5,7 +5,7 @@ const isLoggedIn = require('../config/auth') //add to routes that are only for u
 
 router.get('/', locationsCtrl.index);
 
-router.get('/new', isLoggedIn, locationsCtrl.new);
+router.get('/new', locationsCtrl.new);
 
 router.post('/', isLoggedIn, locationsCtrl.create);  
 

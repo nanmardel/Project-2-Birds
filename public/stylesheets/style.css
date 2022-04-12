@@ -1,21 +1,21 @@
 .topnav a {
   display: grid;
   justify-content: end;
-  color: #FAEF7E;
+  color: black;
   text-size-adjust: 30px;
 
 }
-body {
-  background-image: url('https://i.imgur.com/mNVBQOc.jpg');
+.index-ejs {
+  background-image: url('https://i.imgur.com/QQDpL2q.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100%;
 }
 
 
 h1 {
-  font-family: 'Lemonada', cursive, Arial;
-  color: rgb(0, 148, 200);
+  font-family: 'Shippori Mincho', cursive, Arial;
+  color: #053B24;
   text-align: center;
   font-size: 80px;
   font-weight: bold;
@@ -23,12 +23,12 @@ h1 {
 
 h3 {
   text-align: center;
-  color: rgb(0, 148, 200);
+  color: #3C584C;
 }
 
 #list {
   text-align: center;
-  color: rgb(222, 83, 27);
+  color: #C57309;
   display: grid;
   justify-items: center;
   justify-content: space-around;
@@ -49,24 +49,72 @@ h2 {
 }
 
 #new-form {
-  color:rgb(0, 148, 200);
+  color: #053B24;
   
 }
 
 #add-bird-image {
-  color: rgb(0, 148, 200);
+  color: #053B24;
+  display: grid;
+  justify-items: center;
+}
+
+.show-ejs {
+  background-image: url('https://i.imgur.com/0wxGJ6K.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: 'Shippori Mincho', cursive, Arial;
+  color: #053B24;
 }
 
 #show-page {
   text-align: center;
-  color: rgb(222, 83, 27);
+  color: #3C584C;
   display: grid;
   justify-items: normal;
-  justify-content: start;
+  justify-content: space-evenly;
   border-spacing: 15px;
 }
 
+.bird-image {
+  height: 15%;
+  width: 15%;
+}
 
+.bird-image-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+
+.bird-author {
+  height: 5%;
+  width: 5%;
+}
+
+
+.new-location {
+  background-image: url('https://i.imgur.com/QQDpL2q.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: 'Shippori Mincho', cursive, Arial;
+  color: #053B24;
+}
+
+#new-form {
+  display: grid;
+  justify-content: space-around;
+  
+}
+
+h2 {
+  font-family: 'Shippori Mincho', cursive, Arial;
+  color: #053B24;
+  text-align: center;
+}
 
 
 /* .brand-logo {

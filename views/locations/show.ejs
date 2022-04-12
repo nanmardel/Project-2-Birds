@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Fredericka+the+Great&family=Kalam:wght@300;400&family=Lemonada&family=Poiret+One&family=Shadows+Into+Light&family=Shippori+Mincho:wght@800&family=Sriracha&display=swap" rel="stylesheet">
     
     <title>show.ejs</title>
 </head>
-<body>
+<body class="show-ejs">
     <div class="topnav">
   <a class="active" href="/locations">All Locations</a>
   <a href="/locations/new">Add Location</a>
@@ -16,43 +17,41 @@
 </div>
 <h1>Plumage</h1>
 <section id="show-page">
-    <h3>Page with information of the location and bird images</h3>
     <table>
         <thead>
             <tr>
-            <th>Location</th>
-            <th>State</th>
-            <th>City</th>
+                <td><%= location.name %></td>
+                <td><%= location.city %></td>
+                <td><%= location.state %></td>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-    <td><%= location.name %></td>
-    <td><%= location.state %></td>
-    <td><%= location.city %></td>
-   </tr>
-   </tbody>
-   </table>
-</section>
+        </table>
+        </section>
 
-<h2>Bird Images</h2>
+
 <form id="add-bird-image" method="POST" action="/locations/<%=location._id %>/images">
-    <label>Bird Image:</label>
+    <label>Bird Image Url:</label>
     <input type="url" id="bird-image" name="imageUrl"><br>
-    <label>Description:</label> <br>
+    <label>Type of Bird:</label> <br>
     <textarea name="description"></textarea><br>
     <input type="submit" value="Add Image">
-
 </form>
 <section id="bird-images-listing">
-    <% location.images.forEach(bird => { %>
+    <% location.images.forEach(image => { %>
         <div class="bird-image-container">
-            <img class="bird-image" src="<%= bird.imageUrl %>">
-            <h3 class="bird-author"><%= bird.userName %></h3>
-            <p class="description"><%= bird.description %></p>
+            <img class="bird-image" src="<%= image.imageUrl %>">
+            <h3 class="bird-author"></h3><%= image.userName %></h3>
+            <p class="description"><%= image.description %></p>
+            <% if (user && user._id.equals(image.user)) { %>
+                <form action="/images/<%= image._id %>?_menthod=DELETE" method="POST">
+                    <button type="Submit">Delete</button>
+                </form>
+                no<%} %>
         </div>
     <% }) %>
-    
+
 </section>
 </body>
 </html>
+
+

@@ -25,18 +25,19 @@
     <table id="list">
         <tr>
             <th>Location</th>
+            <th>City</th>
                 <th> State</th>
-                <th>City</th>
-            </tr>
+                </tr>
                 <tbody>
                     <% locations.forEach(function(l){ %>
                         <tr>
                             <td><%= l.name %></td>
-                            <td><%= l.state %></td>
                             <td><%= l.city %></td>
+                            <td><%= l.state %></td>
+                            
                             
 
-                            <td><a href="/locations/<%=l._id %>">Details</a></td>
+                            <td><a href="/locations/<%=l._id %>">View Images</a></td>
                         </tr>
                     <% }); %>
                 </tbody>

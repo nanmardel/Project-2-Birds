@@ -21,7 +21,7 @@
         <thead>
             <tr>
                 <td><%= location.name %></td>
-                <td><%= location.city %></td>
+                <td><%= location.city %>,</td>
                 <td><%= location.state %></td>
             </tr>
         </thead>
@@ -32,26 +32,23 @@
 <form id="add-bird-image" method="POST" action="/locations/<%=location._id %>/images">
     <label>Bird Image Url:</label>
     <input type="url" id="bird-image" name="imageUrl"><br>
-    <label>Type of Bird:</label> <br>
-    <textarea name="description"></textarea><br>
+    <label>Type of Bird:</label> 
+    <input type="text" name="description">
     <input type="submit" value="Add Image">
 </form>
-<section id="bird-images-listing">
+<div id="bird-images-listing">
     <% location.images.forEach(image => { %>
-        <div class="bird-image-container">
-            <img class="bird-image" src="<%= image.imageUrl %>">
-            <h3 class="bird-author"></h3><%= image.userName %></h3>
             <p class="description"><%= image.description %></p>
+            <img class="bird-image" src="<%= image.imageUrl %>">
+            <h3 class="bird-author"></h3>Posted By: <%= image.userName %></h3>
             <% if (user && user._id.equals(image.user)) { %>
                 <form action="/images/<%= image._id %>?_menthod=DELETE" method="POST">
                     <button type="Submit">Delete</button>
                 </form>
-                no<%} %>
-        </div>
+            
+                <%} %>
     <% }) %>
 
-</section>
 </body>
 </html>
-
 

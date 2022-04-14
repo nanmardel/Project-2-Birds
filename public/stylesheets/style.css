@@ -27,6 +27,7 @@ h3 {
 }
 
 #list {
+  height: 100vh;
   text-align: center;
   color: white;
   display: grid;

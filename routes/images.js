@@ -6,7 +6,9 @@ const imagesCtrl = require('../controllers/images');
 
 router.post('/locations/:id/images', isLoggedIn, imagesCtrl.addImage);
 
-router.delete('/images/:id', isLoggedIn, imagesCtrl.delete)
+router.delete('/images/:id', isLoggedIn, imagesCtrl.delete);
+
+router.put('/images/:id', isLoggedIn, imagesCtrl.updateImage);
 
 
 module.exports = router;

@@ -45,8 +45,13 @@
                 <form action="/images/<%= image._id %>?_menthod=DELETE" method="POST">
                     <button type="Submit">Delete</button>
                 </form>
+                <% if (user && user._id.equals(image.user)) { %>
+                    <form action="/images/<%= image._id %>?_menthod=DELETE" method="PUT">
+                        <button type="Submit">Update</button>
+                    </form>
+                    <% } %>
             
-                <%} %>
+                <% } %>
     <% }) %>
 
 </body>

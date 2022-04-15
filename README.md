@@ -1,35 +1,29 @@
-# passport-boilerplate
+# Plumage
+
+*Plumage* is meant to be a communal space for bird-enthusiast. In this app individuals can share their bird sightings with others by adding the locations they have visited and then adding images of the birds that inhabit those locations. The app was named after the word "Plumage" (a bird's feathers collectively) as this app is a collection of bird sightings.
 
 
-This is your passport boilerplate.
+## ScreenShots Of App 
 
-## Setup 
-
-1. Clone the repo
-2. Rename the folder to your Project
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+![Landing Page](https://i.imgur.com/q95iqt1.jpg)
+![Add Location](https://i.imgur.com/wE48ybl.png)
+![Add Image](https://i.imgur.com/cBZKiAb.png)
 
 
-#### Setup your git repo
-0. Setup your `.env` file and add all the things you need! (look at mongoose movies for reference!)
-1. in the project root `git init`
-2. `git add .` to add all the starter code
-3. `git commit -m "setup boilerplate"` 
-4. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-5. copy the remote address
-6. In your terminal add the remote `git remote add origin yourGithubRepo'sAddressGoesHere`
-7. `git pull origin master` If a screen pulls up asking you to do something just press `:q` and then `enter` (thats vim btw :) )
-8. `git push origin master`
+## Technologies Used
+0. HTML
+1. CSS
+2. JavaScript
+3. Node.js
+4. MongoDB
+5. Express
 
-#### Setup your login
+## Getting Started
+App link: https://bird-plumage.herokuapp.com/locations
+Trello board: https://trello.com/invite/b/vLoaR1uZ/3470fd1a5fbadfb7808336ccce70cfd8/seir37-project-2
 
-0. Setup your database connection string
-1. Then Setup Your User Model, 
-2. Follow the steps from the lesson plan to get your Google login credentials for your `.env` file (create the file if you haven't), or you can just copy the ones from earlier if you want to reuse them.
-3. Setup the Code in your config passport 
-4. Setup your callback routes in your `routes/index`
-5. Setup a view and test your login!
-
-#### Make a commit 
-
-```git commit -m "setup up oauth and User Model"```
+## Feature Enhancements
+ To improve the app, I would like to:
+ 0. List locations in alphabetical order
+ 1. Allow users to upload images from their phones
+ 2. Allow users to comment on the images posted

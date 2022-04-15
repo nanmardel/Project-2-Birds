@@ -10,7 +10,6 @@ module.exports = {
 
 
 function index(req, res) {
-    console.log(req.user, '<- req.user')
     Location.find({}, function(err, locations){
         res.render('locations/index',{
             locations,
@@ -27,9 +26,7 @@ function newlocation(req, res) {
 function create(req, res) {
     const location = new Location(req.body);
     location.save(function (err){
-        console.log(err, 'create error');
         if(err) return res.redirect('/locations/new');
-        console.log(location);
         res.redirect('/locations')
 });
 }

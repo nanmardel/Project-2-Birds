@@ -20,10 +20,13 @@
 
 ## Getting Started
 App link: https://bird-plumage.herokuapp.com/locations
+
 Trello board: https://trello.com/invite/b/vLoaR1uZ/3470fd1a5fbadfb7808336ccce70cfd8/seir37-project-2
 
 ## Feature Enhancements
+
  To improve the app, I would like to:
+ 
  0. List locations in alphabetical order
  1. Allow users to upload images from their phones
  2. Allow users to comment on the images posted

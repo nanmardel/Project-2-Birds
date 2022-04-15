@@ -3,7 +3,7 @@
 *Plumage* is meant to be a communal space for bird-enthusiast. In this app individuals can share their bird sightings with others by adding the locations they have visited and then adding images of the birds that inhabit those locations. The app was named after the word "plumage" (a bird's feathers collectively) as this app is a collection of bird sightings.
 
 
-## ScreenShots Of App 
+## Screenshots of App 
 
 ![Landing Page](https://i.imgur.com/q95iqt1.jpg)
 ![Add Location](https://i.imgur.com/wE48ybl.png)

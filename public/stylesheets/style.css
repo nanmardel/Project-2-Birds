@@ -24,25 +24,45 @@ h1 {
 h3 {
   text-align: center;
   color: #3C584C;
+  font-size: 30px;
 }
 
 #list {
-  height: 100vh;
-  text-align: center;
-  color: white;
   display: grid;
   justify-items: center;
-  justify-content: space-around;
-  border-spacing: 15px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+  font-weight: bolder;
+  color: black;
+  border-collapse: separate;
+  background-color: whitesmoke;
+  opacity: 60%;
+} 
+#location {
+  padding-right: 90px;
+  padding-left: 60px;
+  
 }
+
+#city {
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+#state {
+  padding-left: 10px;
+  padding-right: 95px;
+}
+
 
 #list-of-location {
   display: grid;
 }
 
 a {
-  color: white;
+  color: #C46F04;
 }
 
 h2 {
@@ -85,6 +105,7 @@ h2 {
   border-spacing: 15px;
 }
 
+
 .bird-image {
   height: 20%;
   width: 20%;
@@ -96,6 +117,7 @@ h2 {
   margin-left: 70px;
   align-content: space-around;
   align-items: center;
+  padding-right: 5%;
 }
 
 .bird-author {

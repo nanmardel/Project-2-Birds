@@ -20,10 +20,8 @@
     <table>
         <thead>
             <tr>
-                <td><%= location.name %></td>
-                <td><%= location.city %>,</td>
-                <td><%= location.state %></td>
-            </tr>
+                <td><%= location.name %> - <%= location.city %>, <%= location.state %> </td>
+                </tr>
         </thead>
         </table>
         </section>
@@ -42,11 +40,12 @@
             <img class="bird-image" src="<%= image.imageUrl %>">
             <h3 class="bird-author"></h3>Posted By: <%= image.userName %></h3>
             <% if (user && user._id.equals(image.user)) { %>
-                <form action="/images/<%= image._id %>?_menthod=DELETE" method="POST">
+                <form action="/images/<%= image._id %>?_method=DELETE" method="POST">
                     <button type="Submit">Delete</button>
                 </form>
                 <% if (user && user._id.equals(image.user)) { %>
-                    <form action="/images/<%= image._id %>?_menthod=DELETE" method="PUT">
+                    <form action="/images/<%= image._id %>?_method=PUT" method="POST">
+                        <input name="description" value="<%= image.description %>">
                         <button type="Submit">Update</button>
                     </form>
                     <% } %>

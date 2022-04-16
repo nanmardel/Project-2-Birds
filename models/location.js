@@ -2,12 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const imageSchema = new Schema({
-    imageUrl: {
-        type: String,
-    },
-    description: {
-        type: String,
-    },
+    imageUrl: String,
+    description: String,
     user: {type: Schema.Types.ObjectId, ref: 'User'}, // refererncing the user document
     userName: String, 
     userAvatar: String

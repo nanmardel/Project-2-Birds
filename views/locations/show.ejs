@@ -27,9 +27,9 @@
         </section>
 
 
-<form id="add-bird-image" method="POST" action="/locations/<%=location._id %>/images">
-    <label>Bird Image Url:</label>
-    <input type="url" id="bird-image" name="imageUrl"><br>
+<form id="add-bird-image" method="POST" action="/locations/<%=location._id %>/images" enctype="multipart/form-data">
+    <label>Upload Image:</label>
+    <input type="file" id="bird-image" name="imageUrl"><br>
     <label>Type of Bird:</label> 
     <input type="text" name="description">
     <input type="submit" value="Add Image">
@@ -37,7 +37,7 @@
 <div id="bird-images-listing">
     <% location.images.forEach(image => { %>
             <p class="description"><%= image.description %></p>
-            <img class="bird-image" src="<%= image.imageUrl %>">
+            <img class="bird-image" src="/images/<%= image.imageUrl %>">
             <h3 class="bird-author"></h3>Posted By: <%= image.userName %></h3>
             <% if (user && user._id.equals(image.user)) { %>
                 <form action="/images/<%= image._id %>?_method=DELETE" method="POST">
